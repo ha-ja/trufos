@@ -110,4 +110,12 @@ export class MainEventService implements IEventService {
   async selectEnvironment(key: string) {
     environmentService.currentEnvironmentKey = key;
   }
+
+  async openCollection(dirPath: string) {
+    return await persistenceService.loadCollection(dirPath);
+  }
+
+  async createCollection(dirPath: string, title: string) {
+    return await persistenceService.createCollection(dirPath, title);
+  }
 }
